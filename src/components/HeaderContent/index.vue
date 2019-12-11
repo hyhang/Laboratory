@@ -17,7 +17,7 @@
       <el-dropdown trigger="click">
         <div class="user-info">
           <el-avatar shape="square" size="small" src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"></el-avatar>
-          <p>Hyhang</p>
+          <p>Admin</p>
         </div>
         <el-dropdown-menu slot="dropdown">
           <el-dropdown-item icon="el-icon-user">个人中心</el-dropdown-item>

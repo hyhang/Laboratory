@@ -1,8 +1,9 @@
 <template>
   <el-menu 
-    default-active="1-1"
+    :default-active="defaultActive"
     class="left-menu"
     text-color="#aaa"
+    router
     :collapse="menuCollapse">
     <el-submenu index="1">
       <template slot="title">
@@ -10,19 +11,19 @@
         <span slot="title">仪表盘</span>
       </template>
       <el-menu-item-group>
-        <el-menu-item index="1-1">工作台</el-menu-item>
-        <el-menu-item index="1-2">分析页</el-menu-item>
+        <el-menu-item index="/laboratory/workspace">工作台</el-menu-item>
+        <el-menu-item index="/laboratory/analyse">分析页</el-menu-item>
       </el-menu-item-group>
     </el-submenu>
-    <el-menu-item index="2">
+    <el-menu-item index="/laboratory/mock1">
       <i class="el-icon-menu"></i>
       <span slot="title">应用模拟</span>
     </el-menu-item>
-    <el-menu-item index="3">
+    <el-menu-item index="/laboratory/mock2">
       <i class="el-icon-document"></i>
       <span slot="title">数值模拟</span>
     </el-menu-item>
-    <el-menu-item index="4">
+    <el-menu-item index="/laboratory/setting">
       <i class="el-icon-setting"></i>
       <span slot="title">用户设置</span>
     </el-menu-item>
@@ -34,9 +35,17 @@ import { mapState } from 'vuex'
 
 export default {
   name: 'left-menu',
+  data() {
+    return {
+      defaultActive: '/laboratory/workspace'
+    }
+  },
   computed: {
     ...mapState(['menuCollapse'])
   },
+  mounted() {
+    this.defaultActive = this.$route.path
+  }
 }
 </script>
 
