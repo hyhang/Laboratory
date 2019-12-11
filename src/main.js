@@ -3,11 +3,13 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import element from 'element-ui'
+import echarts from 'echarts'
 import 'element-ui/lib/theme-chalk/index.css'
 import './assets/styles/index.less'
 
 Vue.use(element)
 Vue.prototype.$bus = new Vue()
+Vue.prototype.$echarts = echarts
 
 Vue.config.productionTip = false
 
