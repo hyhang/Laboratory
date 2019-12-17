@@ -41,6 +41,20 @@ export const reqPwdLogin = ({ name, pwd, captcha  }) => ajax({
   }
 })
 
+//用户注册
+export const register = ( userInfo ) => ajax({
+  method: 'POST',
+  url: BASE + '/user/register',
+  data: userInfo
+})
+
+//用户登录
+export const login = ( userInfo ) => ajax({
+  method: 'POST',
+  url: BASE + '/user/login',
+  data: userInfo
+})
+
 //手机验证码登录
 export const reqCodeLogin = ({ phone, code }) => ajax({
   method: 'POST',
